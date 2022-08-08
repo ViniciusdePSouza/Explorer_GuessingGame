@@ -1,7 +1,7 @@
 // variáveis 
 
-const scream1 = document.querySelector('.scream1')
-const scream2 = document.querySelector('.scream2')
+const screen1 = document.querySelector('.screen1')
+const screen2 = document.querySelector('.screen2')
 const btnTry = document.querySelector('#btnTry')
 const btnReset = document.querySelector('#btnReset')
 
@@ -16,8 +16,8 @@ function resetGame(){
 }
 
 function toggleFuction() {
-    scream1.classList.toggle('hide')
-    scream2.classList.toggle('hide')
+    screen1.classList.toggle('hide')
+    screen2.classList.toggle('hide')
 }
 
 function gameBeggining(e) {
@@ -28,7 +28,7 @@ function gameBeggining(e) {
     if(Number(number.value) == randomNumber){
         toggleFuction()
 
-        scream2.querySelector('h2').innerText = `Parabéns! O número era ${randomNumber}
+        screen2.querySelector('h2').innerText = `Parabéns! O número era ${randomNumber}
         Você acertou em ${attempts} tentativas`
     }
 
@@ -36,3 +36,6 @@ function gameBeggining(e) {
 
     attempts++
 }
+
+btnTry.addEventListener('click', gameBeggining)
+btnReset.addEventListener('click', resetGame)
